@@ -7,6 +7,7 @@ import "./styles.css";
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import firebaseConfig from "./firebase.config";
+import 'react-bootstrap';
 
 firebase.initializeApp(firebaseConfig);
 
@@ -17,11 +18,12 @@ function App() {
 
   return (
     <AuthContext.Provider value={{ isLoggedIn, setLoggedIn }}>
-      Is logged in? {JSON.stringify(isLoggedIn)}
+      {/* Is logged in? {JSON.stringify(isLoggedIn)} */}
       <div className="App">
         <Router>
-          <Header />
-
+          <Header />   
+          <img  className="img-fluid" width="300" src={require('./img/saveditwhite.png')}></img>
+      <hr></hr>
           <Switch>
             {routes.map(route => (
               <Route
